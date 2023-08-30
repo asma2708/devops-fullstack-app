@@ -3,11 +3,12 @@ pipeline {
     tools {
         go 'go1.19'
     }
-   /* environment {
+    environment {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
-        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
-    }*/
+       // GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/"
+	GOPATH = "$WORKSPACE/"
+    }
     stages {        
         stage('Pre Test') {
             steps {

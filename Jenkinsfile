@@ -29,12 +29,12 @@ pipeline {
                     // Build the Docker image
                     //def dockerImage = docker.build("${DOCKER_IMAGE_NAME}:latest", "-f ${DOCKERFILE_PATH} .")
 		    echo "In build stage"
-		    sh "sudo docker-compose build"
-		    sh "sudo docker-compose up"
+		    sh "docker-compose build"
+		    sh "docker-compose up"
 		    sh "cd .."
 		    sh "pwd"
-	            sh "sudo docker build -t my-react-app . "
-		    sh "sudo docker run -p 3000:3000 my-react-app"		
+	            sh "docker build -t my-react-app . "
+		    sh "docker run -p 3000:3000 my-react-app"		
                 }
             }
         }

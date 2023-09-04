@@ -28,7 +28,7 @@ pipeline {
                 script {
                     // Build the Docker image
                     //def dockerImage = docker.build("${DOCKER_IMAGE_NAME}:latest", "-f ${DOCKERFILE_PATH} .")
-		    dir(/var/lib/jenkins/workspace/DockerTest/backend){
+		    dir('/var/lib/jenkins/workspace/DockerTest/backend'){
 		    echo "In build stage"
 		    sh "pwd"
 		    sh 'ls -la'

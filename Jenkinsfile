@@ -29,10 +29,12 @@ pipeline {
                     // Build the Docker image
                     //def dockerImage = docker.build("${DOCKER_IMAGE_NAME}:latest", "-f ${DOCKERFILE_PATH} .")
 		    echo "In build stage"
-                    // Optionally, you can push the Docker image to a registry here
-                    // docker.withRegistry('https://your-docker-registry.com', 'your-registry-credentials-id') {
-                    //     dockerImage.push()
-                    // }
+		    sh "sudo docker-compose build"
+		    sh "sudo docker-compose up"
+		    sh "cd .."
+		    sh "pwd"
+	            sh "sudo docker build -t my-react-app . "
+		    sh "sudo docker run -p 3000:3000 my-react-app"		
                 }
             }
         }

@@ -28,9 +28,9 @@ pipeline {
                 script {
                     // Build the Docker image
                     //def dockerImage = docker.build("${DOCKER_IMAGE_NAME}:latest", "-f ${DOCKERFILE_PATH} .")
+		    dir(/var/lib/jenkins/workspace/DockerTest/backend){
 		    echo "In build stage"
 		    sh "pwd"
-//		    sh 'cd backend'
 		    sh 'ls -la'
 		    sh 'pwd'
 		    sh 'docker-compose build'
@@ -39,6 +39,7 @@ pipeline {
 		    sh "pwd"
 	            sh "docker build -t my-react-app . "
 		    sh "docker run -p 3000:3000 my-react-app"	
+}
                 }
             }
         }

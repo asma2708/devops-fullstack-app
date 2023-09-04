@@ -30,7 +30,8 @@ pipeline {
                     //def dockerImage = docker.build("${DOCKER_IMAGE_NAME}:latest", "-f ${DOCKERFILE_PATH} .")
 		    echo "In build stage"
 		    sh "pwd"
-		    sh "cd backend"
+		    sh "cd devops-fullstack-app/backend"
+		    sh "ls -la"
 		    sh "docker-compose build"
 		    sh "docker-compose up"
 		    sh "cd .."

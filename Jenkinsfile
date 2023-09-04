@@ -28,16 +28,18 @@ pipeline {
                 script {
                     // Build the Docker image
                     //def dockerImage = docker.build("${DOCKER_IMAGE_NAME}:latest", "-f ${DOCKERFILE_PATH} .")
+		    dir('devops-fullstack-app/backend') {
 		    echo "In build stage"
 		    sh "pwd"
-		    sh "cd ./devops-fullstack-app/backend"
+//		    sh "cd ./devops-fullstack-app/backend"
 		    sh "ls -la"
 		    sh "docker-compose build"
 		    sh "docker-compose up"
 		    sh "cd .."
 		    sh "pwd"
 	            sh "docker build -t my-react-app . "
-		    sh "docker run -p 3000:3000 my-react-app"		
+		    sh "docker run -p 3000:3000 my-react-app"	
+		}	
                 }
             }
         }

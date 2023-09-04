@@ -32,6 +32,7 @@ pipeline {
 		    sh "pwd"
 //		    sh 'cd backend'
 		    sh 'ls -la'
+		    sh 'pwd'
 		    sh 'docker-compose build'
 		    sh 'docker-compose up'
 		    sh "cd .."

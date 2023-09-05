@@ -32,6 +32,9 @@ pipeline {
 		    echo "In build stage"
 		    sh "pwd"
 		    sh 'ls -la'
+		    echo 'ls -la after chown'
+		    sh 'sudo chown -R jenkins pg_data'
+		    sh 'sudo chmod -R 777 pg_data'
 		    sh 'pwd'
 		    sh 'sudo docker-compose build'
 		    sh 'sudo docker-compose up -d'

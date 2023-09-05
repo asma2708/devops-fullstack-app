@@ -33,8 +33,8 @@ pipeline {
 		    sh "pwd"
 		    sh 'ls -la'
 		    sh 'pwd'
-		    sh 'docker-compose build'
-		    sh 'docker-compose up -d'
+		    sh 'sudo docker-compose build'
+		    sh 'sudo docker-compose up -d'
 		   }
 		   
 	 	   dir('/var/lib/jenkins/workspace/DockerTest/frontend'){

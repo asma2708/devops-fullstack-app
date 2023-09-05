@@ -38,7 +38,7 @@ pipeline {
 		    sh 'sudo chown -R jenkins pg_data_test'
 		    sh 'sudo chmod -R jenkins pg_data_test'
 		    echo 'ls -la after chown'
-		    Ssh 'ls -la'
+		    sh 'ls -la'
 		    sh 'pwd'
 		    sh 'sudo docker-compose build'
 		    sh 'sudo docker-compose up -d'

@@ -33,10 +33,10 @@ pipeline {
 		    sh "pwd"
 		    sh 'ls -la'
 		    echo 'ls -la after chown'
-		    sh 'sudo chown -R jenkins pg_data'
+		    sh 'sudo chown -R jenkins:jenkins pg_data'
 		    sh 'sudo chmod -R 777 pg_data'
-		    sh 'sudo chown -R jenkins pg_data_test'
-		    sh 'sudo chmod -R jenkins pg_data_test'
+		    sh 'sudo chown -R jenkins:jenkins pg_data_test'
+		    sh 'sudo chmod -R 777 pg_data_test'
 		    echo 'ls -la after chown'
 		    sh 'ls -la'
 		    sh 'pwd'

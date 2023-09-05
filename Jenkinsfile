@@ -34,17 +34,13 @@ pipeline {
 		    sh 'ls -la'
 		    sh 'pwd'
 		    sh 'docker-compose build'
-		    sh 'docker-compose up'
-		    sh "cd .."
-		    sh "pwd"
-	            sh "docker build -t my-react-app . "
-		    sh "docker run -p 3000:3000 my-react-app"	
+		    sh 'docker-compose up -d'
 		   }
 		   
 	 	   dir('/var/lib/jenkins/workspace/DockerTest/frontend'){
 		   sh 'ls -la'
 		   sh "docker build -t my-react-app . "
-                   sh "docker run -p 3000:3000 my-react-app"
+                   sh "docker run -d -p 3000:3000 my-react-app"
 		}  	 	  
 
 	
